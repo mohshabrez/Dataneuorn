@@ -1,5 +1,5 @@
 // Import the Mongoose library
-import mongoose from ("mongoose");
+import mongoose from "mongoose";
 
 // Define a Mongoose schema for Counter documents
 const counterSchema = new mongoose.Schema({

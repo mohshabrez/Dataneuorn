@@ -1,6 +1,6 @@
 // Import necessary modules
-import express from ("express");
-import { Counter } from ("../model/counter.model.js");
+import express from "express";
+import { Counter } from "../model/counter.model.js";
 
 // Create an Express router
 const router = express.Router();
