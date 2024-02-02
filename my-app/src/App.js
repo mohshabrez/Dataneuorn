@@ -52,7 +52,8 @@ const App = () => {
   // Fetch counters on component mount
   useEffect(() => {
     const fetchCounters = async () => {
-      // Fetch counters from API and update state
+      // Fetch counters from API and update state 
+      //API call execution time: 0.3999999910593033 ms
       const response = await fetch(`${api}/counters`);
       const data = await response.json();
       setAddCounter(data.find((c) => c.name === "add").count);
@@ -67,6 +68,7 @@ const App = () => {
     const fetchData = async () => {
       try {
         // Fetch data from API and update state
+        //API call execution time: 0.6000000089406967 ms
         const response = await axios.get(api);
         const Gotdata = response.data.reduce((acc, item, index) => {
           acc[index] = {
@@ -122,6 +124,7 @@ const App = () => {
         const componentValue = { ...data[e], component: e };
         // console.log(componentValue);
         // Send POST request to API to add item
+        //API call execution time: 0.20000000298023224 ms
         const response = await axios.post(`${api}`, componentValue);
         console.log(response.data);
         setAddButton(false);
@@ -133,6 +136,7 @@ const App = () => {
   };
   const handleUpdate = async (id) => {
     try {
+      //API call execution time: 0.3000000029802322 ms
       const response = await axios.post(`${api}/${data[id].id}`, data[id]);
       console.log(response.data);
     } catch (error) {
